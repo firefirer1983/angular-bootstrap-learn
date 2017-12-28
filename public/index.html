@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>turtleApp</title>
+<html lang="en" ng-app="turtleApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>TurtleApp</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  </head>
+  <body>
+    <div ui-view></div>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
-</head>
-<body>
-  <div ui-view></div>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-  <script src="app/index.modules.js"></script>
-  <script src="app/index.config.js"></script>
-  <script src="app/index.route.js"></script>
-  <script src="app/index.run.js"></script>
-  <script src="app/src/main/main.controller.js"></script>
-  <script src="app/src/list/list.controller.js"></script>
+    <script src="app/index.modules.js"></script>
+    <script src="app/src/main/main.controller.js"></script>
+    <script src="app/src/list/list.controller.js"></script>
+    <script src="app/src/components/modals/modal.controller.js"></script>
+    <script src="app/src/components/modals/mymodal.controller.js"></script>
+    <script src="app/index.run.js"></script>
+    <script src="app/index.route.js"></script>
+    <script src="app/index.config.js"></script>
 
-</body>
+
+  </body>
 </html>

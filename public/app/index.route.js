@@ -1,21 +1,30 @@
 (function () {
+
   angular
     .module('turtleApp')
     .config(routeConfig);
   function routeConfig($stateProvider, $urlRouterProvider) {
+	  console.log("route config begin!");
     $stateProvider
-      .stat('home', {
+      .state('home', {
         url: '/',
-        templateUrl: 'app/main/main.html',
+        templateUrl: '/app/src/main/main.html',
         controller: 'MainController',
         controllerAs: 'mainCtrl'
       })
       .state('list', {
         url: '/list',
-        templateUrl: 'app/list/list.html',
+        templateUrl: '/app/src/list/list.html',
         controller: 'ListController',
         controllerAs: 'listCtrl'
       })
+      .state('modal', {
+        url: '/demo/modal',
+	      templateUrl: '/app/src/components/modals/modal.html',
+	      controller: 'ModalController',
+	      controllerAs: 'ModalCtrl'
+      })
+    console.log("route config done!");
     $urlRouterProvider.otherwise('/');
   }
 })();

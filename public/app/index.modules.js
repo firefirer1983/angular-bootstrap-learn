@@ -1,3 +1,4 @@
 (function () {
-  angular.module('turtleApp', ['ui.router', 'ui.bootstrap']);
+  angular
+    .module('turtleApp', ['ngAnimate', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap']);
 })();
