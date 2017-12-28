@@ -1,19 +1,16 @@
 (function () {
-  angular.module('turtleApp')
-    .controller('ListController', listCtrl);
-
-  function listCtrl($scope) {
-    let $log = $scope.log;
-    $log.i("listCtrl");
-    let vm = this;
-    this.name = 'ListController';
-	}
 
 	angular.module('turtleApp')
-		.controller('ModalController', function ($uibModal, $log) {
+		.controller('ListController', function (turtles, $uibModal, $scope) {
 			let vm = this;
-			vm.open = function () {
+			let $log = $scope.log;
+			let turtleSel = null;
+			vm.turtles = turtles.turtles;
 
+			vm.name = "ListControlller";
+			vm.open = function (select) {
+        vm.turtleSel = select;
+				$log.i("turtle selected:", vm.turtleSel);
 				let modalInstance = $uibModal.open({
 					animation: false,
 					ariaLabelledBy: 'modal-title',
@@ -22,17 +19,19 @@
 					controller: 'ModalInstanceController',
 					controllerAs: 'instanceCtrl',
 					size: 'sm',
+          scope: {
+					  turtleSel: vm.turtleSel
+          },
 					resolve: {
-						items: function () {
-							return vm.items;
-						}
+						items: vm.turtleSel
 					}
 				});
 
 				modalInstance.result.then(function (selectedItem) {
+				  console.log("modal instance then:", selectedItem);
 					vm.selected = selectedItem;
 				}, function () {
-					$log.info('Modal dismissed at: ' + new Date());
+					$log.i('Modal dismissed at: ' + new Date());
 				});
 			};
 
@@ -41,15 +40,23 @@
 // Please note that $uibModalInstance represents a modal window (instance) dependency.
 // It is not the same as the $uibModal service used above.
 
-	angular.module('turtleApp').controller('ModalInstanceController', function ($uibModalInstance) {
+	angular
+    .module('turtleApp')
+    .controller('ModalInstanceController', function ($uibModalInstance, $scope) {
 		let instanceCtrl = this;
-
+    console.log("$scope:", $scope);
 		instanceCtrl.ok = function () {
+		  console.log("instanceCtrl ==> ok!");
 			$uibModalInstance.close();
 		};
 
 		instanceCtrl.cancel = function () {
+			console.log("instanceCtrl ==> cancel!");
 			$uibModalInstance.dismiss('cancel');
 		};
+
+		instanceCtrl.test = function () {
+      console.log("testing ..");
+		}
 	});
 })();

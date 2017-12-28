@@ -16,7 +16,12 @@
         url: '/list',
         templateUrl: '/app/src/list/list.html',
         controller: 'ListController',
-        controllerAs: 'listCtrl'
+        controllerAs: 'listCtrl',
+	      resolve: {
+        	turtles: function (turtleRepository) {
+		        return turtleRepository.getTurtles();
+	        }
+	      }
       })
       .state('modal', {
         url: '/demo/modal',
