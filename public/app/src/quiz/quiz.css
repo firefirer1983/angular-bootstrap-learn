@@ -1,0 +1,9 @@
+.answer {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+}
+
+.answer:hover {
+  cursor: pointer;
+}

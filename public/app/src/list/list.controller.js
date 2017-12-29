@@ -4,13 +4,10 @@
 		.controller('ListController', function (turtles, $uibModal, $scope) {
 			let vm = this;
 			let $log = $scope.log;
-			let turtleSel = null;
 			vm.turtles = turtles.turtles;
-
-			vm.name = "ListControlller";
+			vm.searchFilter = "";
 			vm.open = function (select) {
         vm.turtleSel = select;
-				// $log.i("turtle selected:", vm.turtleSel);
 				let modalInstance = $uibModal.open({
 					animation: false,
 					ariaLabelledBy: 'modal-title',
@@ -26,11 +23,10 @@
 					}
 				});
 
-				modalInstance.result.then(function (selectedItem) {
-				  console.log("modal instance then:", selectedItem);
-					vm.selected = selectedItem;
-				}, function () {
-					$log.i('Modal dismissed at: ' + new Date());
+				modalInstance.result.then(function (msg) {
+					$log.i('Modal cloase at: ' + new Date() + 'msg: ' + msg);
+				}, function (msg) {
+					$log.i('Modal dismiss at: ' + new Date() + 'msg: ' + msg);
 				});
 			};
 
@@ -45,12 +41,12 @@
     console.log("ModalInstanceController turtleSel:", turtleSel);
 		vm.ok = function () {
 		  console.log("instanceCtrl ==> ok!");
-			$uibModalInstance.close();
+			$uibModalInstance.close("OK");
 		};
 
 		vm.cancel = function () {
 			console.log("instanceCtrl ==> cancel!");
-			$uibModalInstance.dismiss('cancel');
+			$uibModalInstance.dismiss('Cancel');
 		};
 	}
 })();

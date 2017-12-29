@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   </head>
   <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>Turtle Facts Quiz</h1>
+        <h3>Learn about all the turtles below before you decide to take on the
+          <strong>TURTLE QUIZ</strong>
+        </h3>
+      </div>
+    </div>
     <div ui-view></div>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -17,8 +25,10 @@
 
     <script src="app/index.modules.js"></script>
     <script src="app/src/components/turtleRepository/turtleRepository.service.js"></script>
+    <script src="app/src/components/quizMatrics/quizMatrics.service.js"></script>
     <script src="app/src/main/main.controller.js"></script>
     <script src="app/src/list/list.controller.js"></script>
+    <script src="app/src/quiz/quiz.controller.js"></script>
     <script src="app/src/components/modals/modal.controller.js"></script>
     <script src="app/index.run.js"></script>
     <script src="app/index.route.js"></script>
