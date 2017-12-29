@@ -28,18 +28,26 @@
     </div>
   </div>
 
-  <div ng-controller="ModalInstanceController as instanceCtrl">
+  <div class="well">
     <script type="text/ng-template" id="modal.html">
       <div class="modal-header">
-        <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+        <h3 class="modal-title" id="modal-title">{{modalCtrl.turtleSel.type}}</h3>
+
+        <img class="img-rounded img-responsive"
+             ng-src="/app/assets/images/turtles/{{modalCtrl.turtleSel.type}}.jpg"
+             alt="{{modalCtrl.turtleSel.type}}">
+
+        <p><strong>Type: </strong>{{modalCtrl.turtleSel.type}} </p>
+        <p><strong>Size: </strong>{{modalCtrl.turtleSel.size}} </p>
+        <p><strong>Locations: </strong>{{modalCtrl.turtleSel.locations}} </p>
+        <p><strong>Lifespan: </strong>{{modalCtrl.turtleSel.lifespan}} </p>
+        <p><strong>Diet: </strong>{{modalCtrl.turtleSel.diet}} </p>
       </div>
       <div class="modal-body" id="modal-body">
-        description here: dasudofsd fsd fosudf
+        <p><strong>Description: </strong>{{modalCtrl.turtleSel.description}} </p>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="instanceCtrl.ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="instanceCtrl.cancel()">Cancel</button>
-        <button class="btn btn-warning" type="button" ng-click="instanceCtrl.test()">Test</button>
+        <button class="btn btn-primary" type="button" ng-click="modalCtrl.ok()">Close</button>
       </div>
     </script>
   </div>

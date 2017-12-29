@@ -10,20 +10,19 @@
 			vm.name = "ListControlller";
 			vm.open = function (select) {
         vm.turtleSel = select;
-				$log.i("turtle selected:", vm.turtleSel);
+				// $log.i("turtle selected:", vm.turtleSel);
 				let modalInstance = $uibModal.open({
 					animation: false,
 					ariaLabelledBy: 'modal-title',
 					ariaDescribedBy: 'modal-body',
 					templateUrl: 'modal.html',
-					controller: 'ModalInstanceController',
-					controllerAs: 'instanceCtrl',
-					size: 'sm',
-          scope: {
-					  turtleSel: vm.turtleSel
-          },
+					controller: ModalInstanceController,
+					controllerAs: 'modalCtrl',
+					size: 'lg',
 					resolve: {
-						items: vm.turtleSel
+						turtleSel: function () {
+							return vm.turtleSel;
+						}
 					}
 				});
 
@@ -40,23 +39,18 @@
 // Please note that $uibModalInstance represents a modal window (instance) dependency.
 // It is not the same as the $uibModal service used above.
 
-	angular
-    .module('turtleApp')
-    .controller('ModalInstanceController', function ($uibModalInstance, $scope) {
-		let instanceCtrl = this;
-    console.log("$scope:", $scope);
-		instanceCtrl.ok = function () {
+	function ModalInstanceController($uibModalInstance, turtleSel) {
+		let vm = this;
+		vm.turtleSel = turtleSel;
+    console.log("ModalInstanceController turtleSel:", turtleSel);
+		vm.ok = function () {
 		  console.log("instanceCtrl ==> ok!");
 			$uibModalInstance.close();
 		};
 
-		instanceCtrl.cancel = function () {
+		vm.cancel = function () {
 			console.log("instanceCtrl ==> cancel!");
 			$uibModalInstance.dismiss('cancel');
 		};
-
-		instanceCtrl.test = function () {
-      console.log("testing ..");
-		}
-	});
+	}
 })();
