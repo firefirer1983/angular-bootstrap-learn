@@ -29,11 +29,22 @@
 		    controller: 'QuizController',
 		    controllerAs: 'quizCtrl',
 		    resolve: {
-			    turtles: function (turtleRepository) {
-				    return turtleRepository.getTurtles();
-			    },
 			    matrics: function (quizMatrics) {
 				    return quizMatrics.getQuizMatrics();
+			    }
+		    }
+	    })
+	    .state('mark', {
+		    url: '/mark',
+		    templateUrl: 'app/src/mark/mark.html',
+		    controller: 'MarkController',
+		    controllerAs: 'markCtrl',
+		    resolve: {
+			    matrics: function (quizMatrics) {
+				    return quizMatrics.getQuizMatrics();
+			    },
+			    answers: function (quizMatrics) {
+				    return quizMatrics.getSubmitAnswer();
 			    }
 		    }
 	    })

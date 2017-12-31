@@ -1,14 +1,21 @@
-.answer-selected {
+.answer-correct {
   padding: 15px;
   border-radius: 5px;
-  border: 1px solid #bbb;
-  background-color: yellow;
+  background-color: #dff0d8;
 }
+
+.answer-wrong {
+  padding: 15px;
+  border-radius: 5px;
+  background-color:  #f2dede;
+}
+
 .answer-not-selected {
   padding: 15px;
   border-radius: 5px;
   border: 1px solid #bbb;
 }
+
 .answer:hover {
   cursor: pointer;
 }
@@ -22,10 +29,9 @@
   overflow: hidden;
 }
 
-.img-answer-selected {
-  border: solid 3px yellow;
+.img-answer-correct {
+  border: 3px solid #5ea640;
 }
-
-.img-answer-not-selected {
-
+.img-answer-wrong {
+  border: 3px solid #b74848;
 }

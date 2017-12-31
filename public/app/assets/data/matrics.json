@@ -47,16 +47,16 @@
         "text": "Which of these is the Alligator Snapping Turtle?",
         "possibilities": [
           {
-            "answer": "https://c1.staticflickr.com/3/2182/2399413165_bcc8031cac_z.jpg?zz=1"
+            "answer": "Olive Ridley Turtle"
           },
           {
-            "answer": "http://images.nationalgeographic.com/wpf/media-live/photos/000/006/cache/ridley-sea-turtle_688_600x450.jpg"
+            "answer": "Kemp's Ridley Sea Turtle"
           },
           {
-            "answer": "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2011/8/13/1313246505515/Leatherback-turtle-007.jpg"
+            "answer": "Leatherback Turtle"
           },
           {
-            "answer": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Alligator_snapping_turtle_-_Geierschildkr%C3%B6te_-_Alligatorschildkr%C3%B6te_-_Macrochelys_temminckii_01.jpg"
+            "answer": "Alligator Snapping Turtle"
           }
         ],
         "selected": null,
@@ -67,16 +67,16 @@
         "text": "Which of these is the Green Turtle?",
         "possibilities": [
           {
-            "answer": "http://www.what-do-turtles-eat.com/wp-content/uploads/2014/10/Sea-Turtles-Habitat.jpg"
+            "answer": "Hawksbill Sea Turtle"
           },
           {
-            "answer": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Kemp's_Ridley_sea_turtle_nesting.JPG"
+            "answer": "Kemp's Ridley Sea Turtle"
           },
           {
-            "answer": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Alligator_snapping_turtle_-_Geierschildkr%C3%B6te_-_Alligatorschildkr%C3%B6te_-_Macrochelys_temminckii_01.jpg"
+            "answer": "Alligator Snapping Turtle"
           },
           {
-            "answer": "http://assets.worldwildlife.org/photos/163/images/carousel_small/SCR_290360hawskbill-why-matter-LG.jpg?1345565532"
+            "answer": "Green Turtle"
           }
         ],
         "selected": null,
@@ -113,7 +113,7 @@
             "answer": "Leatherback turtle"
           },
           {
-            "answer": "Hawksbill Turtle"
+            "answer": "Hawksbill Sea Turtle"
           },
           {
             "answer": "Alligator Snapping Turtle"
@@ -147,16 +147,16 @@
         "text": "Which of these is the Olive Ridley Turtle?",
         "possibilities": [
           {
-            "answer": "http://i.telegraph.co.uk/multimedia/archive/02651/loggerheadTurtle_2651448b.jpg"
+            "answer": "Loggerhead Turtle"
           },
           {
-            "answer": "http://assets.worldwildlife.org/photos/163/images/carousel_small/SCR_290360hawskbill-why-matter-LG.jpg?1345565532"
+            "answer": "Hawksbill Sea Turtle"
           },
           {
-            "answer": "http://images.nationalgeographic.com/wpf/media-live/photos/000/006/cache/ridley-sea-turtle_688_600x450.jpg"
+            "answer": "Kemp's Ridley Sea Turtle"
           },
           {
-            "answer": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Kemp's_Ridley_sea_turtle_nesting.JPG"
+            "answer": "Eastern Snake Necked Turtle"
           }
         ],
         "selected": null,

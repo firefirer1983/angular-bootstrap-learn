@@ -1,0 +1,78 @@
+<div>
+  <link rel="stylesheet" href="app/src/mark/mark.css">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1><strong>Result: </strong></h1>
+        <div class="btn-toolbar">
+          <button class="btn"
+                  ng-repeat="question in markCtrl.questions"
+                  ng-class="{
+                    'btn-info': markCtrl.answers[$index] === markCtrl.correctAnswers[$index],
+                    'btn-danger': markCtrl.answers[$index] !== markCtrl.correctAnswers[$index]
+                  }"
+                  ng-click="markCtrl.selectQuestion($index)">
+            <span class="glyphicon"
+                  ng-class="{
+                    'glyphicon-ok': markCtrl.answers[$index] === markCtrl.correctAnswers[$index],
+                    'glyphicon-remove': markCtrl.answers[$index] !== markCtrl.correctAnswers[$index]
+                  }">
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="col-sm-6">
+          <p><strong>Correct:</strong></p>
+          <button class="btn btn-info"><span class="glyphicon glyphicon-ok"></span></button>
+        </div>
+        <div class="col-sm-6">
+          <p><strong>Wrong:</strong></p>
+          <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Your Score:</h2>
+        <h3><strong>{{markCtrl.score | number:2}}  %</strong></h3>
+      </div>
+    </div>
+    <div class="row" ng-hide="markCtrl.finalize">
+      <h3><strong>Question: </strong></h3>
+      <div class="well well-sm col-sm-12">
+        <h4>{{markCtrl.qid + 1}}. {{markCtrl.questionSel.text}}</h4>
+        <div ng-if="markCtrl.questionSel.type === 'text'" class="row">
+          <div class="col-sm-6 "
+               ng-repeat="possibility in markCtrl.questionSel.possibilities">
+              <h4 class="answer answer-not-selected"
+                  ng-class="{
+                      'answer-wrong': markCtrl.isWrong($index),
+                      'answer-correct': markCtrl.isCorrect($index)
+                    }"
+                    ng-click="markCtrl.selectAnswer($index+1)">
+                {{possibility.answer}}
+              </h4>
+          </div>
+        </div>
+        <div ng-if="markCtrl.questionSel.type === 'image'" class="row">
+          <div class="col-sm-6 "
+               ng-repeat="possibility in markCtrl.questionSel.possibilities">
+            <img ng-src="/app/assets/images/turtles/{{possibility.answer}}.jpg"
+                 class="img-answer"
+                 ng-class="{
+                      'img-answer-wrong': markCtrl.isWrong($index),
+                      'img-answer-correct': markCtrl.isCorrect($index)
+                 }">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <col-sm-12>
+        <a href="/#!/list" class="btn btn-info"><h4><strong>Back to homepage</strong></h4></a>
+      </col-sm-12>
+    </div>
+  </div>
+</div>
+

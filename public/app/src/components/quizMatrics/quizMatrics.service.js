@@ -5,7 +5,7 @@
 
   function quizMatrics($http, $rootScope) {
     var $log = $rootScope.log;
-
+    var answers_submit = null;
     function getQuizMatrics() {
 
       return $http.get('/app/assets/data/matrics.json')
@@ -17,8 +17,18 @@
           return "matrics get failed!";
         });
     }
+
+    function submitAnswer(answers){
+	    answers_submit = answers;
+    }
+
+    function getSubmitAnswer() {
+      return answers_submit;
+    }
     return {
-	    getQuizMatrics: getQuizMatrics
+	    getQuizMatrics: getQuizMatrics,
+	    submitAnswer: submitAnswer,
+      getSubmitAnswer: getSubmitAnswer
     };
   }
 })();
